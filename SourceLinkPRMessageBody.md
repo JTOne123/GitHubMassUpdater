@@ -5,7 +5,7 @@ CSProj files have been updated to enable SourceLink in your nuget.
 
 I noticed that your repository and Nuget package are important for our .NET community, but you still haven't enabled SourceLink.
 
-**We have to take 2 steps**
+**We have to take 2 steps:**
 1) Please approve this pull request and make .NET a better place for .NET developers and their debugging.
 2) **Then upload the .snupkg file** to https://www.nuget.org/ (now you can find the snupkg file along with the .nuget file)
 
