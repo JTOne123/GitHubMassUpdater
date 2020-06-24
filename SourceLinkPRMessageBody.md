@@ -1,7 +1,7 @@
 CSProj files have been updated to enable SourceLink in your nuget.
 ---
 
-*This pull request was created with an automated workflow.*
+*[This pull request was created with an automated workflow]*
 
 I noticed that your repository and Nuget package are important for our .NET community, but you still haven't enabled SourceLink.
 
