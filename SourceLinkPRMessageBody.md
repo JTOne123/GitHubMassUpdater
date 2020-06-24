@@ -1,4 +1,4 @@
-CSProj files have been updated to enable SourceLink in your nuget.
+CSProj files have been updated to enable SourceLink in your nuget
 ---
 
 *[This pull request was created with an automated workflow]*
