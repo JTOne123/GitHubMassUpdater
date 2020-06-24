@@ -9,11 +9,11 @@ I noticed that your repository and Nuget are very important for the .NET communi
 1) Please approve this PR and make .NET a better place for .NET developers and debugging.
 2) **Then upload the .snupkg file** to https://www.nuget.org/ (now you can find the snupkg file along with the .nuget file)
 
-You can find more information about SourceLine
+You can find more information about SourceLine at the following links  
 https://github.com/dotnet/sourcelink
 https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx
 
-If you are interesting about this automated workflow and how it works
+If you are interesting about this automated workflow and how it works  
 https://github.com/JTOne123/GitHubMassUpdater
 
 *If you notice any flaws, please comment and I will try to make changes manually. (but it is not exactly)*
