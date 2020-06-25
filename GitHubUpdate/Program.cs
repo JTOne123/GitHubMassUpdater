@@ -129,11 +129,11 @@ namespace GitHubMassUpdater.GitHubUpdate
             {
                 var pr = new NewPullRequest(prMessage, $"{forkRepoUser}:{branch}", $"{branch}");
                 pr.Body = prBody;
-                pr.Draft = true;
+                pr.Draft = false;
                 await Task.Delay(800);
                 var result = await github.PullRequest.Create(orignRepoUser, orignRepoName, pr);
 
-                return $"https://{orignRepoUser}/{orignRepoName}/pulls";
+                return $"https://github.com/{orignRepoUser}/{orignRepoName}/pulls";
             }
             catch (Exception ex)
             {
