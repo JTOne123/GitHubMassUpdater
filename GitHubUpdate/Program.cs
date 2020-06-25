@@ -67,25 +67,37 @@ namespace GitHubMassUpdater.GitHubUpdate
                 var isNeedPR = false;
                 foreach (var relativeFilePath in repoToFix.Value)
                 {
-                    await Task.Delay(800);
-                    var existingFile = await github.Repository.Content.GetAllContentsByRef(forkRepo.Id, relativeFilePath, branch);
-                    var gitFile = existingFile.FirstOrDefault();
-                    if (gitFile != null)
+                    try
                     {
-                        if (!IsNeedToBeFixed(gitFile.Content))
-                            continue;
+                        await Task.Delay(800);
+                        var existingFile = await github.Repository.Content.GetAllContentsByRef(forkRepo.Id, relativeFilePath, branch);
+                        var gitFile = existingFile.FirstOrDefault();
+                        if (gitFile != null)
+                        {
+                            if (!IsNeedToBeFixed(gitFile.Content))
+                                continue;
 
-                        var newContent = GetNewContent(gitFile.Content);
-                        var commit = await CreateCommitAsync(forkRepo, relativeFilePath, commitMessage, newContent, gitFile.Sha);
+                            var newContent = GetNewContent(gitFile.Content);
 
-                        if (commit != null)
-                            isNeedPR = true;
+                            if (string.IsNullOrEmpty(newContent))
+                                continue;
+
+                            var commit = await CreateCommitAsync(forkRepo, relativeFilePath, commitMessage, newContent, gitFile.Sha);
+
+                            if (commit != null)
+                                isNeedPR = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
                     }
                 }
 
                 if (isNeedPR)
                 {
                     var result = await CreatePRAsync(login, repoName, forkRepo.Owner.Login, branch, prMessage, prBody);
+                    Console.WriteLine(result);
                     await File.AppendAllLinesAsync(outputFilepath, new List<string> { result });
                 }
             }
@@ -154,8 +166,20 @@ namespace GitHubMassUpdater.GitHubUpdate
                 return content;
 
             var newLine = "\n";
-            var searchWord = newLine + "  </PropertyGroup>";
-            var firstPropertyGroupIndex = content.IndexOf(searchWord);
+            var searchWord = "</PropertyGroup>";
+            var searchWordWithParagraph = $"{newLine}  {searchWord}";
+            var firstPropertyGroupIndex = content.IndexOf(searchWordWithParagraph);
+            var exectSearchWord = searchWordWithParagraph;
+
+            if (firstPropertyGroupIndex == -1)
+            {
+                firstPropertyGroupIndex = content.IndexOf(searchWord);
+
+                if (firstPropertyGroupIndex == -1)
+                    return null;
+                else
+                    exectSearchWord = searchWord;
+            }
 
             var textToInsert = newLine +
                                "    <PublishRepositoryUrl>true</PublishRepositoryUrl>" + newLine +
@@ -167,7 +191,7 @@ namespace GitHubMassUpdater.GitHubUpdate
                                "    <PackageReference Include=\"Microsoft.SourceLink.GitHub\" Version=\"1.0.0\" PrivateAssets=\"All\" />" + newLine +
                                "  </ItemGroup>" + newLine;
 
-            content = content.Remove(firstPropertyGroupIndex, searchWord.Length);
+            content = content.Remove(firstPropertyGroupIndex, exectSearchWord.Length);
             content = content.Insert(firstPropertyGroupIndex, textToInsert);
 
             return content;
