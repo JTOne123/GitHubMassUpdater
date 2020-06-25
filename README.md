@@ -28,6 +28,7 @@ GitHubMassUpdater.GitHubSearch.exe -i c:\temp\nugetsearch_0_10_1000\ -o c:\temp\
 
 Apply fix
 ```
+GitHubMassUpdater.GitHubUpdate.exe -i c:\temp\githubsearch_0_10_1000\ -o c:\temp\prresults.txt -a [gitHubOauth](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) -b master -c "[COMMIT] The proj files have been updated to enable SourceLink" -p "[PR] The proj files have been updated to enable SourceLink" -d "C:\Git\GitHub\GitHubMassUpdater\SourceLinkPRMessageBody.md"
 ```
 
 # What's next?
