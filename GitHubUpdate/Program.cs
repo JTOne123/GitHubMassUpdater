@@ -189,7 +189,7 @@ namespace GitHubMassUpdater.GitHubUpdate
                                newLine +
                                "  <ItemGroup>" + newLine +
                                "    <PackageReference Include=\"Microsoft.SourceLink.GitHub\" Version=\"1.0.0\" PrivateAssets=\"All\" />" + newLine +
-                               "  </ItemGroup>" + newLine;
+                               "  </ItemGroup>";
 
             content = content.Remove(firstPropertyGroupIndex, exectSearchWord.Length);
             content = content.Insert(firstPropertyGroupIndex, textToInsert);
