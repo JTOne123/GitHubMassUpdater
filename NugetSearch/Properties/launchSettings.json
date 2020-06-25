@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NugetSearch": {
+      "commandName": "Project",
+      "commandLineArgs": "-o c:\\temp -f 0 -l 5 -s 10"
+    }
+  }
+}

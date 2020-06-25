@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GitHubSearch": {
+      "commandName": "Project",
+      "commandLineArgs": "-i c:\\temp\\nugetsearch_11_25_1000\\ -o c:\\temp\\githubsearch_11_25_1000\\ -a e18682486b7b9e036cf2b873b04fa3ca2f312295 -b master"
+    }
+  }
+}

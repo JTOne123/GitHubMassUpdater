@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GitHubUpdate": {
+      "commandName": "Project",
+      "commandLineArgs": "-i c:\\temp\\githubsearch_0_10_1000\\ -o c:\\temp\\prresults.txt -a e18682486b7b9e036cf2b873b04fa3ca2f312295 -b master -c \"[COMMIT] The proj files have been updated to enable SourceLink\" -p \"[PR] The proj files have been updated to enable SourceLink\" -d \"C:\\Git\\GitHub\\GitHubMassUpdater\\SourceLinkPRMessageBody.md\""
+    }
+  }
+}
