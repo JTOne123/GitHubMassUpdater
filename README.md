@@ -34,6 +34,8 @@ Apply fix
 GitHubMassUpdater.GitHubUpdate.exe -i c:\temp\githubsearch_0_10_1000\ -o c:\temp\prresults.txt -a !gitHubOauth! -b master -c "[COMMIT] The proj files have been updated to enable SourceLink" -p "[PR] The proj files have been updated to enable SourceLink" -d "C:\Git\GitHub\GitHubMassUpdater\SourceLinkPRMessageBody.md"
 ```
 
+Looking for PR Body text? [Link](https://github.com/JTOne123/GitHubMassUpdater/blob/master/SourceLinkPRMessageBody.md)
+
 # What's next?
 Feel free to create a PR and make suggestions that we will update next
 

@@ -12,6 +12,7 @@ I noticed that your repository and Nuget package are important for our .NET comm
 You can find more information about SourceLink at the following links  
 https://github.com/dotnet/sourcelink
 https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx
+https://www.meziantou.net/how-to-debug-nuget-packages-using-sourcelink.htm
 
 If you are interesting about this automated workflow and how it works  
 https://github.com/JTOne123/GitHubMassUpdater
