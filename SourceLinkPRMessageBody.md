@@ -9,7 +9,7 @@ I noticed that your repository and Nuget package are important for our .NET comm
 1) Please approve this pull request and make .NET a better place for .NET developers and their debugging.
 2) **Then just upload the .snupkg file** to https://www.nuget.org/ (now you can find the snupkg file along with the .nuget file)
 
-You can find more information about SourceLine at the following links  
+You can find more information about SourceLink at the following links  
 https://github.com/dotnet/sourcelink
 https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx
 
