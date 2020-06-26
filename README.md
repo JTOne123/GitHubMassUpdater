@@ -19,7 +19,7 @@ No reason, just have a few free hours on a weekend
 
 *More info about GitHub oauthToken [gitHubOauth](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)*
 
-Find all GitHub repos of nugget packages
+Find all GitHub repos of Nuget packages
 ```
 GitHubMassUpdater.NugetSearch.exe -o c:\temp\nugetsearch_0_10_1000\ -f 0 -l 10 -s 1000
 ```
